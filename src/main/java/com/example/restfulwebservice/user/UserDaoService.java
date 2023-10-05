@@ -56,4 +56,20 @@ public class UserDaoService {
 
         return null;
     }
+
+    public User update(User input) {
+        Iterator<User> iterator = users.iterator();
+
+        while (iterator.hasNext()) {
+            User user = iterator.next();
+
+            if (user.getId() == input.getId()) {
+                user.setName(input.getName());
+                user.setJoinDate(new Date());
+                return user;
+            }
+        }
+
+        return null;
+    }
 }
