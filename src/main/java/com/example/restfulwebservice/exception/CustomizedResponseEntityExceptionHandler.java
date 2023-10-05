@@ -20,7 +20,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         ExceptionResponse exceptionResponse =
                 new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
 
-        return new ResponseEntity(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(UserNotFoundException.class) // UserNotFoundException 전용 예외 처리 로직
@@ -28,6 +28,6 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         ExceptionResponse exceptionResponse =
                 new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
 
-        return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND); // 404 상태 코드 발생
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND); // 404 상태 코드 발생
     }
 }
