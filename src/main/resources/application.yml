@@ -15,11 +15,7 @@ spring:
     base-path: /api # hal-explorer 기본 url
     detection-strategy: annotated
 
-  # Spring security 설정 정보
-  security:
-    user:
-      name: username
-      password: passw0rd
+  jpa:
 
 # swagger 설정 정보
 springdoc:

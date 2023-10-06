@@ -24,14 +24,12 @@ dependencies {
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2' // swagger 의존성 추가
 	implementation 'org.springframework.boot:spring-boot-starter-actuator' // actuator 의존성 추가 (서버 모니터링용)
 	implementation 'org.springframework.data:spring-data-rest-hal-explorer' // hal-explorer 의존성 추가
-	implementation 'org.springframework.boot:spring-boot-starter-security' // spring security 의존성 추가
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {
