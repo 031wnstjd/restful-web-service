@@ -20,3 +20,10 @@ springdoc:
     disable-swagger-default-url: true
     display-request-duration: true
     operations-sorter: alpha
+
+# actuator 추가 설정 정보
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

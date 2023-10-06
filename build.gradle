@@ -22,7 +22,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas' // hateoas 의존성 추가
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml' // JSON to XML 변환 라이브러리
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2' // swagger 의존성 추가
-
+	implementation 'org.springframework.boot:spring-boot-starter-actuator' // actuator 의존성 추가 (서버 모니터링용)
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	compileOnly 'org.projectlombok:lombok'
