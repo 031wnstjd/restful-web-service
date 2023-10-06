@@ -6,12 +6,14 @@ import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
 @AllArgsConstructor
 //@JsonIgnoreProperties(value={"password", "ssn"}) // 지정한 필드를 JSON 데이터 반환 시 제외함
+@NoArgsConstructor
 @JsonFilter("UserInfo")
 public class User {
     private Integer id;
