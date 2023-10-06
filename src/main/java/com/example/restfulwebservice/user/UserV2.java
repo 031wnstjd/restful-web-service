@@ -1,18 +1,15 @@
 package com.example.restfulwebservice.user;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.Date;
-
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonFilter("UserInfoV2")
+@Setter @Getter
 public class UserV2 extends User {
     private String grade;
 }
