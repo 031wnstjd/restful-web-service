@@ -1,11 +1,26 @@
 server:
   port: 8088
 
-#logging:
-#  level:
-#    org.springframework: DEBUG
-
 spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/testdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        #        show_sql: true
+        format_sql: true
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+
   # messages라는 기본 이름을 가진 메시지 파일 사용
   messages:
     basename: messages
@@ -15,7 +30,9 @@ spring:
     base-path: /api # hal-explorer 기본 url
     detection-strategy: annotated
 
-  jpa:
+logging.level:
+  org.hibernate.SQL: debug
+#  org.hibernate.type: trace
 
 # swagger 설정 정보
 springdoc:
