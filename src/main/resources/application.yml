@@ -9,10 +9,17 @@ spring:
   # messages라는 기본 이름을 가진 메시지 파일 사용
   messages:
     basename: messages
+
   # Spring Data REST 모듈을 사용하여 생성된 RESTful API의 기본 경로를 지정
   data.rest:
     base-path: /api # hal-explorer 기본 url
     detection-strategy: annotated
+
+  # Spring security 설정 정보
+  security:
+    user:
+      name: username
+      password: passw0rd
 
 # swagger 설정 정보
 springdoc:
