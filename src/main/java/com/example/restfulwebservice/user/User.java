@@ -1,15 +1,13 @@
 package com.example.restfulwebservice.user;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,6 +19,7 @@ public class User {
 
     @Id
     @GeneratedValue
+    @Column(name = "member_id")
     private Integer id;
 
     @Size(min = 2, message = "Name은 2글자 이상 입력해주세요.")
@@ -36,4 +35,15 @@ public class User {
 
     @Schema(description = "사용자의 주민등록번호를 입력해주세요.")
     private String ssn;
+
+    @OneToMany(mappedBy = "user")
+    private List<Post> posts;
+
+    public User(Integer id, String name, Date joinDate, String password, String ssn) {
+        this.id = id;
+        this.name = name;
+        this.joinDate = joinDate;
+        this.password = password;
+        this.ssn = ssn;
+    }
 }
