@@ -21,4 +21,5 @@ public class Post {
     @JoinColumn(name = "member_id")
     @JsonIgnore
     private User user;
+
 }

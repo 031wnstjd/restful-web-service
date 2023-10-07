@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 @AllArgsConstructor
@@ -45,5 +46,24 @@ public class User {
         this.joinDate = joinDate;
         this.password = password;
         this.ssn = ssn;
+    }
+
+    // 연관관계 편의 메서드
+    public void addPost(Post post) {
+        posts.add(post);
+        post.setUser(this);
+    }
+
+    public void removePost(int postId) {
+        Iterator<Post> it = posts.iterator();
+
+        while (it.hasNext()) {
+            Post post = it.next();
+
+            if (post.getId() == postId) {
+                it.remove();
+                return;
+            }
+        }
     }
 }
